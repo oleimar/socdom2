@@ -1,0 +1,63 @@
+# Parameters for life-history analysis of dominance interactions
+# Genotypic traits: w0, th0, g0, ga0, alphw, alphth, beta, v, gf, mf, mfcgr
+max_num_thrds = 1
+num_loci = 11
+G = 500
+M = 1
+n1 = 8
+np1 = 8
+CG0 = 0
+CG1 = 4
+numI0 = 0
+numI1 = 10
+irndx = 200
+minrnds = 10
+domrnds = 5
+drawrnds = 5
+numV1 = 8
+numg0 = 1
+numg1 = 1
+numyrs = 1
+bystl = false
+V0 = 0.0
+cdmg = 0.0
+c0 = 0.0
+c1 = 0.002
+c2 = 0.0
+mu0 = 0.0
+mu1 = 0.0
+mu2 = 0.0
+eta0 = 0.0
+eta1 = 0.0
+eta2 = 0.0
+a1 = 0.707
+b1 = 0.707
+sq = 0.5
+sqm = 0.01
+sigma = 0.5
+sigp = 0.25
+pmax = 0.99
+betelo = 2.5
+V1 = [ 0.000, 0.286, 0.571, 0.857, 1.143, 1.429, 1.714, 2.000]
+Qm = [ 0.000]
+g0 =  [ 8]
+pg0 = [ 1.000]
+g1 =  [ 8]
+pg1 = [ 1.000]
+mut_rate = [ 0.002, 0.002, 0.002, 0.002, 0.002, 0.002,
+             0.000, 0.002, 0.002, 0.000, 0.000]
+SD =       [ 0.04 , 0.08 , 0.04 , 0.08 , 0.01 , 1.00 ,
+             0.04 , 0.01 , 0.01 , 0.01 , 0.002]
+max_val =  [ 4.00 , 8.00 , 2.00 ,15.00 , 2.00 ,500.00,
+             8.00 , 2.00 , 0.50 , 0.50 , 0.50 ]
+min_val =  [-2.00 , -2.00, 0.00 , 0.00 , 0.00 , 0.00 ,
+             0.00 , 0.00 , 0.00 , 0.00 , 0.00 ]
+rho =      [ 0.50 , 0.50 , 0.50 , 0.50 , 0.50 , 0.50 ,
+             0.50 , 0.50 , 0.50 , 0.50 , 0.50 ]
+all0 =     [-0.017, 2.355, 0.028, 0.614, 0.018, 34.86,
+             0.000, 0.432, 0.017, 0.500, 0.500]
+hist = false
+read_from_file = false
+h5InName = "Run_n8v00s1nb0.h5"
+h5OutName = "Run_n8v00s1nb0.h5"
+h5HistName = "Run_n8v00s1nb0hist.h5"
