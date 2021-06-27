@@ -192,8 +192,6 @@ Evo::Evo(const EvoInpData& eid) :
 #ifdef PARA_RUN
     num_thrds = omp_get_max_threads();
     if (num_thrds > id.max_num_thrds) num_thrds = id.max_num_thrds;
-    // check that there is at least one subpopulation per thread
-    // if (num_thrds > nsp) num_thrds = nsp;
     std::cout << "Number of threads: "
               << num_thrds << '\n';
 #endif
