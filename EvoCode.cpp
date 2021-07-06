@@ -706,8 +706,13 @@ void Evo::UpdateAgeStr(unsigned yr1, rand_eng& eng)
         }
     }
     // then copy (move) females in f_pop to correspond to increased age
-    for (unsigned i = Np - 1; i > Npl - 1; --i) {
-        f_pop[i] = f_pop[i - Npl];
+    for (unsigned k = 0; k < G; ++ k) {
+        // in each group (of size Npl = np1*M), the first np1 positions in
+        // f_pop of the group are the youngest cohort, etc.
+        for (unsigned i = Npl - 1; i > np1 - 1; --i) {
+            unsigned j = k*Npl + i;
+            f_pop[j] = f_pop[j - np1];
+        }
     }
     // then copy female offspring in a reshuffled f_offspr into the positions
     // corresponding to the youngest age
@@ -718,8 +723,10 @@ void Evo::UpdateAgeStr(unsigned yr1, rand_eng& eng)
     }
     // randomly shuffle indices
     std::shuffle(foi.begin(), foi.end(), vre[0]);
-    for (unsigned i = 0; i < Np1; ++i) {
-        f_pop[i] = f_offspr[foi[i]];
+    for (unsigned k = 0; k < G; ++ k) {
+        for (unsigned i = 0; i < np1; ++i) {
+            f_pop[k*Npl + i] = f_offspr[foi[k*np1 + i]];
+        }
     }
 }
 
