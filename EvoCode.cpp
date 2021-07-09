@@ -1055,7 +1055,7 @@ void Evo::h5_write_pop(const std::string& outfilename) const
     std::vector<v_type> mgams(N, v_type(num_loci));
     // write maternal gametes of males
     for (unsigned i = 0; i < N; ++i) {
-        const gam_type& gam = m_pop[i].genotype.MatGam().Value();
+        const gam_type& gam = m_pop[i].genotype.mat_gam;
         for (unsigned l = 0; l < num_loci; ++l) {
             mgams[i][l] = gam[l];
         }
@@ -1063,7 +1063,7 @@ void Evo::h5_write_pop(const std::string& outfilename) const
     h5.write_flt_arr("MlMatGam", mgams);
     // write paternal gametes of males
     for (unsigned i = 0; i < N; ++i) {
-        const gam_type& gam = m_pop[i].genotype.PatGam().Value();
+        const gam_type& gam = m_pop[i].genotype.pat_gam;
         for (unsigned l = 0; l < num_loci; ++l) {
             mgams[i][l] = gam[l];
         }
@@ -1073,7 +1073,7 @@ void Evo::h5_write_pop(const std::string& outfilename) const
     std::vector<v_type> fgams(Np, v_type(num_loci));
     // write maternal gametes of females
     for (unsigned i = 0; i < Np; ++i) {
-        const gam_type& gam = f_pop[i].MatGam().Value();
+        const gam_type& gam = f_pop[i].mat_gam;
         for (unsigned l = 0; l < num_loci; ++l) {
             fgams[i][l] = gam[l];
         }
@@ -1081,7 +1081,7 @@ void Evo::h5_write_pop(const std::string& outfilename) const
     h5.write_flt_arr("FlMatGam", fgams);
     // write paternal gametes of females
     for (unsigned i = 0; i < Np; ++i) {
-        const gam_type& gam = f_pop[i].PatGam().Value();
+        const gam_type& gam = f_pop[i].pat_gam;
         for (unsigned l = 0; l < num_loci; ++l) {
             fgams[i][l] = gam[l];
         }
@@ -1091,7 +1091,7 @@ void Evo::h5_write_pop(const std::string& outfilename) const
     std::vector<v_type> mogams(N1, v_type(num_loci));
     // write maternal gametes of male offspring
     for (unsigned i = 0; i < N1; ++i) {
-        const gam_type& gam = m_offspr[i].MatGam().Value();
+        const gam_type& gam = m_offspr[i].mat_gam;
         for (unsigned l = 0; l < num_loci; ++l) {
             mogams[i][l] = gam[l];
         }
@@ -1099,7 +1099,7 @@ void Evo::h5_write_pop(const std::string& outfilename) const
     h5.write_flt_arr("MloMatGam", mogams);
     // write paternal gametes of male offspring
     for (unsigned i = 0; i < N1; ++i) {
-        const gam_type& gam = m_offspr[i].PatGam().Value();
+        const gam_type& gam = m_offspr[i].pat_gam;
         for (unsigned l = 0; l < num_loci; ++l) {
             mogams[i][l] = gam[l];
         }
@@ -1109,7 +1109,7 @@ void Evo::h5_write_pop(const std::string& outfilename) const
     std::vector<v_type> fogams(Np1, v_type(num_loci));
     // write maternal gametes of female offspring
     for (unsigned i = 0; i < Np1; ++i) {
-        const gam_type& gam = f_offspr[i].MatGam().Value();
+        const gam_type& gam = f_offspr[i].mat_gam;
         for (unsigned l = 0; l < num_loci; ++l) {
             fogams[i][l] = gam[l];
         }
@@ -1117,7 +1117,7 @@ void Evo::h5_write_pop(const std::string& outfilename) const
     h5.write_flt_arr("FloMatGam", fogams);
     // write paternal gametes of female offspring
     for (unsigned i = 0; i < Np1; ++i) {
-        const gam_type& gam = f_offspr[i].PatGam().Value();
+        const gam_type& gam = f_offspr[i].pat_gam;
         for (unsigned l = 0; l < num_loci; ++l) {
             fogams[i][l] = gam[l];
         }
